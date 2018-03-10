@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+
+<body>
+  <div id="echarts" style="width: 1200px; height: 500px;"></div>
+  <script src="https://cdn.bootcss.com/echarts/4.0.4/echarts.min.js"></script>
+  <script>
+    var myChart = echarts.init(document.getElementById('echarts'));
+    var option = {
+      title: {
+        text: '天津市小客车增量指标竞价历年价格走势图'
+      },
+      tooltip: {
+        trigger: 'axis'
+      },
+      legend: {
+        data: ['2014年', '2015年', '2016年', '2017年', '2018年']
+      },
+      grid: {
+        left: '3%',
+        right: '4%',
+        bottom: '3%',
+        containLabel: true
+      },
+      toolbox: {
+        feature: {
+          saveAsImage: {}
+        }
+      },
+      xAxis: {
+        type: 'category',
+        boundaryGap: false,
+        data: ['1月', '2月', '3月', '4月', '5月', '6月', '7月', '8月', '9月', '10月', '11月', '12月']
+      },
+      yAxis: {
+        type: 'value'
+      },
+      series: [
+        {
+          name: '2014年',
+          type: 'line',
+          data: [14262, 14262, 14262, 11891, 11144, 10877, 11162, 12590, 16892, 26201, 33987]
+        },
+        {
+          name: '2015年',
+          type: 'line',
+          data: [25861, 13729, 15485, 18996, 22682, 23539, 24490, 24537, 22391, 19093, 18588, 19599]
+        },
+        {
+          name: '2016年',
+          type: 'line',
+          data: [19207, 20103, 24344, 28478, 32225, 34766, 35522, 35356, 32422, 26656, 27150, 28916]
+        },
+        {
+          name: '2017年',
+          type: 'line',
+          data: [28643, 31321, 34662, 37498, 35561, 22857, 25087, 28978, 30504, 29461, 27542, 27542]
+        },
+        {
+          name: '2018年',
+          type: 'line',
+          data: [26080, 25615]
+        }
+      ]
+    };
+    myChart.setOption(option);
+  </script>
+</body>
+
+</html>
